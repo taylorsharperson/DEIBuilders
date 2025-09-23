@@ -1,0 +1,86 @@
+
+
+EDUCATION 
+Bryce Alexander 
+brycejordanalexander@gmail.com | 561.309.5773 
+Florida A&M University, College of Science and Technology 
+Major: Bachelor of Science, Computer Science 
+Tallahassee, FL 
+Expected Graduation: Spring 2026 
+Relevant   Coursework: Fundamentals of    Programming, Database Management Systems,  Object Oriented Programming, Discrete 
+Struc
+tures I & II, Introduction to Computer Security, Applied Security, Data Structures, Operating Systems, Foundations of Computer 
+Science, Programming Languages, Mobile Programming (in progress),  and IS Development (in progress).
+Computational Data Science Program Research Program (Spring 23) 
+Performed data collection utilizing PCAP files with Wireshark and TCPDump, contributing to the   development and   implementation of 
+hands-on cybersecurity labs for educational purposes. 
+TECHNICAL SKILLS 
+Computer: C++ (1-2 years),  Python, mySQL, HTML,  Java,  Typescript,  Swift(ios),  React,  Node.js,  Figma, CSS, Javascript, 
+Andriod Studio
+EXPERIENCE
+Palm Beach County
+ School District: 
+Choice and Career Options Intern 
+ Jun
+ 2023 – July 2023 
+•Conducted thorough data
+ analysis of    student portfolios, generating comprehensive reports on performance metrics. These insights
+served as a foundation for implementing actionable academic improvement strategies.
+•Delivered IT support to    a team of    38   professionals, proficiently configuring and launching various technologies, including
+computers, cameras, printers, and mor
+e within the department.
+LEADERSHIP, PROFESSIONAL DEVELOPMENT & PROJECTS 
+Black Data Processing Association 
+Executive Secretary & Events Committee Head
+Tallahassee, FL 
+Sept 2022 – Dec 2024 
+Best-Fit Chiropractor Website (completed) (www.bestfitchiropractor.com)
+•Developed the B
+est Fit Chiropractor website using HTML, CSS, and JavaScript, featuring an About page, services list, 
+and integrated call-booking functionality.
+•Coded in VS Code, implementing re
+sponsive design for an accessible and user-friendly experience across devices.
+Personalized Website Po
+rtfolio: (in progress)
+•Designing and developing a personalized portfolio website using HTML, CSS, and JavaScript to showcase skills 
+and projects.
+•Building in VS Code with AI-assisted coding to create a responsive, modern, and visually appealing layout.
+Internet 2 Hackathon 
+2024    Goldman Sachs HBCU Possibilities Summit
+  Forage Mastercard Cybersecurity Certificate
+J&J TikTok Challenge: (Runner Up)      2024 BVCC UX/UI Research Cohort 
+CodeHouse 2025
+ App Development Bootcamp   AWS Case Competition: (1st)
+ Fall 2024 CodePath (Web Development)
+ Fall 2
+025 CodePath (Intro to Andriod Development)
+ 
+Palm Beach Count
+y Supervisor of Elections: Information Technology Intern
+Jun 20
+24 – Aug 2024 
+•Staged and configured Electronic Voter Identification Systems (EVIDS) for Election Day operations. 
+•Hands-on experience in tabulating ballots and operating DS200 ballot scanners.
+•Certified in sig
+nature verification, ensuring compliance with election integrity protocols.
+•Assisted in troubleshooting and resolving technical issues related to election equipment and software.
+HACKATHONS & PROGRAMS 
+Florida A&M Univ
+ersity Athletics: Game Day Operations    Intern
+Aug 2
+025   – Dec 2025 
+•Assist with planning and excuting
+ all game day operations for intercollegiate athletic events, ensuring smooth 
+pre-game, in, and post game logistics.
+•Help
+ with event-day operations, including setup, teardown, and fan engagement actvities.
+•Supports dat-to-day administrative tasks for the competitive sports team and assists with event logistics.
+•Participate in departmental meings and professional development workshops.
+•Maintained official file of all co
+rrespondence and
+ documents,
+ including
+ organization's
+ bylaws
+ and
+ procedure manual.

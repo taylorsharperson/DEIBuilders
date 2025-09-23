@@ -1,0 +1,5 @@
+Jane Student
+Master of Science in Data Science, University Y, 2020
+Experience: 2 years as Data Analyst
+Skills: Python, SQL, Docker, AWS
+Projects: Analysis project at github.com/janestudent

@@ -2,26 +2,34 @@ Using pdf-parse fallback for PDF parsing.
 mammoth available for DOCX parsing.
 Sprint1 demo running on http://localhost:3000
 UPLOAD RECEIVED: {
+  originalname: '1760423036820-2025_FALL_Resume.pdf',
+  mimetype: 'application/pdf',
+  size: 309287
+}
+Saved upload to: /Users/iambryceee/Downloads/FAMU (Computer Science) /DEIBuilders/sprint1-demo/uploads/1760467248337-1760423036820-2025_FALL_Resume.pdf
+Parsed text length: 3808
+Parsed preview:   EDUCATION  Bryce Alexander  brycejordanalexander@gmail.com | 561.309.5773  Florida A&M University, College of Science and Technology  Major: Bachelor of Science, Computer Science  Tallahassee, FL  Expected Graduation: Spring 2026  Relevant   Coursework: Fundamentals of    Programming, Database Man
+UPLOAD RECEIVED: {
+  originalname: '1760423036820-2025_FALL_Resume.pdf',
+  mimetype: 'application/pdf',
+  size: 309287
+}
+Saved upload to: /Users/iambryceee/Downloads/FAMU (Computer Science) /DEIBuilders/sprint1-demo/uploads/1760467248673-1760423036820-2025_FALL_Resume.pdf
+Parsed text length: 3808
+Parsed preview:   EDUCATION  Bryce Alexander  brycejordanalexander@gmail.com | 561.309.5773  Florida A&M University, College of Science and Technology  Major: Bachelor of Science, Computer Science  Tallahassee, FL  Expected Graduation: Spring 2026  Relevant   Coursework: Fundamentals of    Programming, Database Man
+UPLOAD RECEIVED: {
   originalname: '2025 FALL Resume.docx',
   mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   size: 15640
 }
-Saved upload to: /Users/iambryceee/Downloads/FAMU (Computer Science) /DEIBuilders/sprint1-demo/uploads/1760465097769-2025_FALL_Resume.docx
+Saved upload to: /Users/iambryceee/Downloads/FAMU (Computer Science) /DEIBuilders/sprint1-demo/uploads/1760467527451-2025_FALL_Resume.docx
 Parsed text length: 3933
 Parsed preview:     EDUCATION  Bryce Alexander  brycejordanalexander@gmail.com | 561.309.5773    Florida A&M University, College of Science and Technology  Major: Bachelor of Science, Computer Science  Tallahassee, FL Expected Graduation: Spring 2026    Relevant Coursework: Fundamentals of Programming, Database Man
 UPLOAD RECEIVED: {
-  originalname: 'Danielle Devose Resume.pdf',
-  mimetype: 'application/pdf',
-  size: 256542
-}
-Saved upload to: /Users/iambryceee/Downloads/FAMU (Computer Science) /DEIBuilders/sprint1-demo/uploads/1760465098871-Danielle_Devose_Resume.pdf
-Parsed text length: 2287
-Parsed preview:   DANIELLE DEVOSE  West Palm Beach, FL 33401 | (561) 718-2395 |  danielle1.devose@famu.edu  xC Sharp_C++_3\WKRQ_3RVW0DQ_5HDFW_1RGHMV_)DVW$3,_+70/_&66 Education  $QWLFLSDWHG*UDGXDWLRQ x&ROODERUDWHGZLWKDWHDPRI+%&8VWXGHQWVWRGHVLJQDQ$,SRZHUHGFOLPDWHULVNPRGHOLQJ
-UPLOAD RECEIVED: {
-  originalname: 'Danielle Devose Resume.docx',
+  originalname: '2025 FALL Resume.docx',
   mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  size: 42700
+  size: 15640
 }
-Saved upload to: /Users/iambryceee/Downloads/FAMU (Computer Science) /DEIBuilders/sprint1-demo/uploads/1760465141041-Danielle_Devose_Resume.docx
-Parsed text length: 2357
-Parsed preview: DANIELLE DEVOSE  West Palm Beach, FL 33401 | (561) 718-2395 | danielle1.devose@famu.edu  Education  Florida A&M University (FAMU), Tallahassee, FL Bachelor of Science in Computer Science Cumulative GPA: 3.1/4.0    Technical Skills                Anticipated Graduation: 12/2025        C Sharp I C++ I
+Saved upload to: /Users/iambryceee/Downloads/FAMU (Computer Science) /DEIBuilders/sprint1-demo/uploads/1760467825919-2025_FALL_Resume.docx
+Parsed text length: 3933
+Parsed preview:     EDUCATION  Bryce Alexander  brycejordanalexander@gmail.com | 561.309.5773    Florida A&M University, College of Science and Technology  Major: Bachelor of Science, Computer Science  Tallahassee, FL Expected Graduation: Spring 2026    Relevant Coursework: Fundamentals of Programming, Database Man

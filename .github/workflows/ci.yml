@@ -26,5 +26,5 @@ jobs:
         working-directory: sprint1-demo
 
       - name: Run tests
-        run: npm test || node ../tests/parseFileBuffer.test.js
+        run: npm test || node ../tests/parseFileBuffer.test.mjs
         working-directory: sprint1-demo

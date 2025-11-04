@@ -21,5 +21,10 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/sprint1-demo/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: npm install
-      - run: npm test || node ./tests/parseFileBuffer.test.js
+      - name: Install dependencies
+        run: npm install
+        working-directory: sprint1-demo
+
+      - name: Run tests
+        run: npm test || node ../tests/parseFileBuffer.test.js
+        working-directory: sprint1-demo

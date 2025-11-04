@@ -125,6 +125,24 @@ ul li{ background:linear-gradient(180deg, #fff, rgba(255,255,255,0.96)); color:v
 .experience-list{ display:flex; flex-direction:column; gap:10px }
 .small{ font-size:13px; color:var(--muted) }
 
+/* Visual grouping for result sections: spacing, inner padding, and soft corners
+   Does not change colors, backgrounds, or typography. */
+.results-section{
+  margin-top:16px; /* spacing between grouped sections */
+  padding:10px;    /* small inner padding to separate content */
+  border-radius:10px; /* soft rounded corners for grouping */
+}
+
+/* Recommendation list styling moved from inline JS to stylesheet */
+.recs-list > ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.recs-list > ul > li{
+  margin-bottom: 12px; /* small separation between entries */
+}
+
 /* responsive */
 @media (max-width:760px){
   .container{ padding:16px }

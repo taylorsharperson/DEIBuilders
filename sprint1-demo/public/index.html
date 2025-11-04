@@ -31,40 +31,57 @@
     <section id="analysisTab" class="card tab-content">
       <h2>Analysis</h2>
 
-      <div class="card contact-card">
+      <section class="results-section" style="margin:1.25rem 0; padding:0.75rem 0;">
         <h3>Contact</h3>
-        <div id="contactInfo" class="small">No contact info detected.</div>
-      </div>
+        <div class="card contact-card">
+          <div id="contactInfo" class="small">No contact info detected.</div>
+        </div>
+      </section>
 
-      <div class="card">
+      <section class="results-section" style="margin:1.25rem 0; padding:0.75rem 0;">
         <h3>Summary</h3>
-        <div id="summary" class="small">No summary detected.</div>
-      </div>
+        <div class="card">
+          <div id="summary" class="small">No summary detected.</div>
+        </div>
+      </section>
 
       <div class="grid">
-        <div class="results card">
+        <section class="results-section" style="margin:1.25rem 0; padding:0.75rem 0;">
           <h3>Skills</h3>
-          <ul id="skills"></ul>
-        </div>
-        <div class="results card">
+          <div class="results card">
+            <ul id="skills"></ul>
+          </div>
+        </section>
+
+        <section class="results-section" style="margin:1.25rem 0; padding:0.75rem 0;">
           <h3>Education</h3>
-          <ul id="education"></ul>
-        </div>
-        <div class="results card">
+          <div class="results card">
+            <ul id="education"></ul>
+          </div>
+        </section>
+
+        <section class="results-section" style="margin:1.25rem 0; padding:0.75rem 0;">
           <h3>Years Experience</h3>
-          <div class="years" id="years">0</div>
-        </div>
+          <div class="results card">
+            <div class="years" id="years">0</div>
+          </div>
+        </section>
       </div>
 
-      <div class="card" style="margin-top:1rem;">
+      <section class="results-section" style="margin:1.25rem 0; padding:0.75rem 0;">
         <h3>Experience (labeled)</h3>
-        <div id="experienceList" class="experience-list small">No labelled experience entries found.</div>
-      </div>
+        <div class="card" style="margin-top:1rem;">
+          <div id="experienceList" class="experience-list small">No labelled experience entries found.</div>
+        </div>
+      </section>
     </section>
 
     <section id="recsTab" class="card tab-content" hidden>
       <h2>Recommended Jobs & Programs</h2>
-      <div id="recsList" class="recs-list"></div>
+      <section class="results-section" style="margin:1.25rem 0; padding:0.75rem 0;">
+        <h3>Recommendations</h3>
+        <div id="recsList" class="recs-list"></div>
+      </section>
     </section>
   </main>
 

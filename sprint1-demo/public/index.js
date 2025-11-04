@@ -79,7 +79,11 @@ form.addEventListener("submit", async (e) => {
       expEl.textContent = "No labelled experience entries found.";
     } else {
       expEl.innerHTML = "";
+      const ul = document.createElement("ul");
+      // keep existing styling by not adding/removing IDs or JS-used classes
       exp.forEach(item => {
+        const li = document.createElement("li");
+        // create the same rec-card content inside the list item
         const wrapper = document.createElement("div");
         wrapper.className = "rec-card";
 
@@ -113,8 +117,10 @@ form.addEventListener("submit", async (e) => {
 
         wrapper.appendChild(top);
         wrapper.appendChild(raw);
-        expEl.appendChild(wrapper);
+        li.appendChild(wrapper);
+        ul.appendChild(li);
       });
+      expEl.appendChild(ul);
     }
 
     // Recommendations
@@ -125,7 +131,12 @@ form.addEventListener("submit", async (e) => {
       p.textContent = "No recommendations found.";
       recsList.appendChild(p);
     } else {
+      // Render recommendations as a list where each item contains the existing card
+  const ul = document.createElement("ul");
+
       for (const r of recs) {
+  const li = document.createElement("li");
+
         const card = document.createElement("div");
         card.className = "rec-card";
 
@@ -166,8 +177,11 @@ form.addEventListener("submit", async (e) => {
           card.appendChild(a);
         }
 
-        recsList.appendChild(card);
+        li.appendChild(card);
+        ul.appendChild(li);
       }
+
+      recsList.appendChild(ul);
     }
 
     statusEl.textContent = "Analysis complete.";

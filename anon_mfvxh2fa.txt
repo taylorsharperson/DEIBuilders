@@ -1,5 +1,0 @@
-Alex Example
-B.S. Computer Science, University Z, 2018
-Experience: 4 years
-Skills: JavaScript, Node.js, SQL
-Projects: https://github.com/alexexample

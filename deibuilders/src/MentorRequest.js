@@ -6,9 +6,9 @@ export default function MentorRequest() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();           // Stop page refresh
-    console.log({ careerField, message });  // Log form data
-    setSubmitted(true);           // Show confirmation message
+    e.preventDefault(); // stop page refresh
+    console.log({ careerField, message }); // log form data
+    setSubmitted(true); // show confirmation message
   };
 
   return (
@@ -27,9 +27,9 @@ export default function MentorRequest() {
         <br />
         <label>
           What are you looking for in a mentor?
-          <textarea 
-            value={message} 
-            onChange={(e) => setMessage(e.target.value)} 
+          <textarea
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Describe your mentor needs"
           />
         </label>

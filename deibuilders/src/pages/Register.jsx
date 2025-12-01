@@ -1,17 +1,40 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-export default function Login() {
-  const navigate = useNavigate();
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const validateFamuEmail = (value) => {
+    // firstname<number>.lastname@famu.edu  (e.g. bryce1.alexander@famu.edu)
+    const re = /^[a-z]+\d+\.[a-z]+@famu\.edu$/i;
+    return re.test(value.trim());
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Frontend-only demo behavior: do not authenticate or send credentials anywhere.
-    console.log("Demo login submitted", { email, password });
-    // Optionally provide a lightweight visual cue for the demo
-    alert("This is a frontend-only demo. No credentials are sent or stored.");
+
+    if (!validateFamuEmail(email)) {
+      alert("Please enter a valid FAMU email. Example: bryce1.alexander@famu.edu");
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    // Frontend-only demo success
+    alert("Account created (demo). No credentials were stored.");
+    // reset form
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   const styles = {
@@ -26,10 +49,10 @@ export default function Login() {
       padding: "2rem",
     },
     card: {
-      width: "min(520px, 92vw)",
+      width: "min(560px, 94vw)",
       backgroundColor: "#ffffff",
       borderRadius: "16px",
-      boxShadow: "0 10px 30px rgba(15,23,42,0.08)",
+      boxShadow: "0 12px 36px rgba(15,23,42,0.08)",
       padding: "2.25rem",
       border: "1px solid #eef2f6",
     },
@@ -81,7 +104,7 @@ export default function Login() {
       fontWeight: 700,
       cursor: "pointer",
       fontSize: "1rem",
-      boxShadow: "0 8px 20px rgba(249,115,22,0.12)",
+      boxShadow: "0 10px 30px rgba(249,115,22,0.12)",
     },
     footerText: {
       marginTop: "0.85rem",
@@ -89,11 +112,9 @@ export default function Login() {
       color: "#6b7280",
       fontSize: "0.9rem",
     },
-    registerLink: {
+    accent: {
       color: "#16a34a",
       fontWeight: 600,
-      cursor: "pointer",
-      marginLeft: "0.25rem",
     },
   };
 
@@ -119,14 +140,12 @@ export default function Login() {
         }
       `}</style>
       <div style={styles.card} role="main">
-        <h1 style={styles.title}>Log In (FAMU Students)</h1>
-        <p style={styles.subtitle}>Use your FAMU student credentials for this demo</p>
+        <h1 style={styles.title}>Create Account (FAMU Students)</h1>
+        <p style={styles.subtitle}>This is a frontend-only demo. Use your FAMU student credentials for testing.</p>
 
         <form style={styles.form} onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="email" style={styles.label}>
-              Email
-            </label>
+            <label htmlFor="email" style={styles.label}>Email</label>
             <input
               id="email"
               name="email"
@@ -137,34 +156,40 @@ export default function Login() {
               style={styles.input}
               aria-describedby="email-help"
             />
-            <div id="email-help" style={styles.helper}>
-              Format example: bryce1.alexander@famu.edu
-            </div>
+            <div id="email-help" style={styles.helper}>Format example: bryce1.alexander@famu.edu</div>
           </div>
 
           <div>
-            <label htmlFor="password" style={styles.label}>
-              Password
-            </label>
+            <label htmlFor="password" style={styles.label}>Password</label>
             <input
               id="password"
               name="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
+              placeholder="Create a password (min 6 chars)"
               style={styles.input}
             />
           </div>
 
-          <button type="submit" style={styles.button}>
-            Log In
-          </button>
+          <div>
+            <label htmlFor="confirmPassword" style={styles.label}>Confirm Password</label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Repeat your password"
+              style={styles.input}
+            />
+          </div>
+
+          <button type="submit" style={styles.button}>Register</button>
         </form>
 
         <div style={styles.footerText}>
-          Don't have an account?
-          <span style={styles.registerLink} onClick={() => navigate("/register")}> Register</span>
+          By using this demo you agree that no real account is created. <span style={styles.accent}>FAMU students only</span>
         </div>
       </div>
     </div>

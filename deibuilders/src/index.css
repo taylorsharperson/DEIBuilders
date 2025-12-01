@@ -7,6 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global animation smoothing */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --default-transition: 180ms ease;
+  }
+  * {
+    transition: background-color var(--default-transition), color var(--default-transition), border-color var(--default-transition), box-shadow var(--default-transition), transform var(--default-transition);
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

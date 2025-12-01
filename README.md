@@ -1,11 +1,11 @@
 DEI Builders Career Platform — README
-## 📌 Overview'
+## Overview
 
 DEI Builders is a career development platform designed to help students upload resumes, analyze their skills, and receive tailored insights for professional growth. The system focuses on accessibility, ease of use, and supporting diverse users as they prepare for internships, jobs, and opportunities.
 
 This project is developed by Bryce Anderson, Taylor Sharperson, and Madison McNealy.
 
-## 🎯 Project Purpose'
+## Project Purpose
 
 The career website will allow students to:
 
@@ -21,13 +21,13 @@ Access a clean, intuitive interface built with Bootstrap 5.3 and FontAwesome
 
 This initial release focuses on delivering a vertical slice that completes the resume upload process end‑to‑end.
 
-## Architecture & Data'
+## Architecture & Data
 
 Initial architecture diagram in /docs/ARCHITECTURE.md
 
 Early data model for user and resume entries
 
-## 📁 Repository Structure'
+## Repository Structure
 root/
  ├── docs/
  │    ├── README.md
@@ -39,7 +39,7 @@ root/
  │    └── ci.yml (GitHub Actions CI)
  ├── env.example
  └── README.md
-## 🛠️ Tooling & Standards'
+## Tooling & Standards
 ## Version Control'
 
 GitHub repository
@@ -52,7 +52,7 @@ Squash merges only
 
 PR requires at least one reviewer
 
-## Project Board'
+## Project Board
 
 Kanban columns:
 
@@ -68,7 +68,7 @@ Done
 
 Every PBI links to SAR requirements.
 
-## CI Pipeline (GitHub Actions)'
+## CI Pipeline (GitHub Actions)
 
 Automatically builds code on every PR
 
@@ -87,7 +87,7 @@ No high‑severity linter errors
 
 Documentation updated for all changes
 
-## ✅ Definitions'
+## Definitions
 ## Definition of Ready (DoR)'
 
 A story is ready if it includes:
@@ -116,7 +116,7 @@ PO manually accepts the story
 
 AI usage logged
 
-## 🔧 Environment Setup'
+## Environment Setup
 ## Requirements'
 
 Node.js / Python / TBD (your team will finalize)
@@ -128,7 +128,7 @@ cp env.example .env
 npm install   # or project equivalent
 npm run dev
 
-## 👥 Contributors'
+## Contributors
 
 Bryce Anderson
 

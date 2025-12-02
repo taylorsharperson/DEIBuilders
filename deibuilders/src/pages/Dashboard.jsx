@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const styles = {
     page: {
       minHeight: "100vh",
@@ -138,7 +140,7 @@ export default function Dashboard() {
         </header>
 
         <section aria-label="Quick actions" style={styles.quickGrid}>
-          <div className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
+          <div onClick={() => navigate('/resume-upload')} className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
             <h3 style={styles.cardTitle}>Resume Analyzer</h3>
             <p style={styles.cardText}>Upload and analyze your resume using AI.</p>
           </div>
@@ -148,7 +150,7 @@ export default function Dashboard() {
             <p style={styles.cardText}>View curated job and internship matches.</p>
           </div>
 
-          <div className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
+          <div onClick={() => navigate('/mentor-requests')} className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
             <h3 style={styles.cardTitle}>Mentorship</h3>
             <p style={styles.cardText}>Connect with professionals in your field.</p>
           </div>
@@ -177,7 +179,7 @@ export default function Dashboard() {
         </section>
 
         <div style={styles.ctaRow}>
-          <button className="cta-button" style={styles.ctaButton} aria-label="Upload Resume">Upload Resume</button>
+          <button className="cta-button" style={styles.ctaButton} aria-label="Upload Resume" onClick={() => navigate('/resume-upload')}>Upload Resume</button>
         </div>
       </main>
     </div>

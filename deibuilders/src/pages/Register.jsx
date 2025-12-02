@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -35,6 +37,8 @@ export default function Register() {
     setEmail("");
     setPassword("");
     setConfirmPassword("");
+  // navigate to dashboard after demo registration
+  navigate("/dashboard");
   };
 
   const styles = {
@@ -190,6 +194,9 @@ export default function Register() {
 
         <div style={styles.footerText}>
           By using this demo you agree that no real account is created. <span style={styles.accent}>FAMU students only</span>
+          <div style={{ marginTop: 8 }}>
+            <button style={{ background: 'transparent', border: 'none', color: '#16a34a', cursor: 'pointer' }} onClick={() => navigate('/login')}>Back to Login</button>
+          </div>
         </div>
       </div>
     </div>

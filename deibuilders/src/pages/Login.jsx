@@ -12,6 +12,8 @@ export default function Login() {
     console.log("Demo login submitted", { email, password });
     // Optionally provide a lightweight visual cue for the demo
     alert("This is a frontend-only demo. No credentials are sent or stored.");
+  // navigate to dashboard for demo flow
+  navigate("/dashboard");
   };
 
   const styles = {

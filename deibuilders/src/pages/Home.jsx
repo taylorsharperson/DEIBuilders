@@ -6,9 +6,7 @@ function Home() {
 
   return (
     <div style={styles.page}>
-      {/* Component-scoped styles for feature grid hover/transition and navbar */}
       <style>{`
-        .feature-grid { }
         .feature-card {
           background-color: #ffffff;
           border: 1px solid #e5e7eb;
@@ -16,6 +14,7 @@ function Home() {
           border-radius: 12px;
           transition: transform 180ms ease, box-shadow 180ms ease;
         }
+
         .feature-card:hover {
           transform: translateY(-4px);
           box-shadow: 0 12px 30px rgba(15,23,42,0.08);
@@ -35,7 +34,7 @@ function Home() {
         }
 
         .top-nav .nav-link::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           right: 0;
@@ -73,7 +72,7 @@ function Home() {
 
         .browse-opportunities:hover {
           transform: translateY(-3px);
-          color: #16a34a !important;
+          color: #16a34a;
         }
       `}</style>
 
@@ -95,7 +94,11 @@ function Home() {
             Log In
           </button>
 
-          <button style={styles.primaryButton} className="get-started">
+          <button
+            style={styles.primaryButton}
+            className="get-started"
+            onClick={() => navigate("/register")}
+          >
             Get Started
           </button>
         </div>
@@ -104,10 +107,13 @@ function Home() {
       {/* Hero Section */}
       <main style={styles.hero}>
         <div style={styles.heroText}>
-          <p style={styles.eyebrow}>For college students & underrepresented talent</p>
+          <p style={styles.eyebrow}>
+            For college students & underrepresented talent
+          </p>
 
           <h1 style={styles.title}>
-            Build your future with <span style={styles.highlight}>clarity</span>, not chaos.
+            Build your future with{" "}
+            <span style={styles.highlight}>clarity</span>, not chaos.
           </h1>
 
           <p style={styles.subtitle}>
@@ -117,11 +123,19 @@ function Home() {
           </p>
 
           <div style={styles.heroButtons}>
-            <button style={styles.primaryButton} className="upload-resume">
+            <button
+              style={styles.primaryButton}
+              className="upload-resume"
+              onClick={() => navigate("/resume-upload")}
+            >
               Upload Resume
             </button>
 
-            <button style={styles.ghostButton} className="browse-opportunities">
+            <button
+              style={styles.ghostButton}
+              className="browse-opportunities"
+              onClick={() => navigate("/dashboard")}
+            >
               Browse Opportunities
             </button>
           </div>
@@ -132,7 +146,7 @@ function Home() {
         </div>
 
         {/* Feature Grid */}
-        <div style={styles.featureGrid} className="feature-grid">
+        <div style={styles.featureGrid}>
           <div style={styles.featureCard} className="feature-card">
             <h4 style={styles.featureTitle}>Resume Analyzer</h4>
             <p style={styles.featureText}>
@@ -159,9 +173,7 @@ function Home() {
 
           <div style={styles.featureCard} className="feature-card">
             <h4 style={styles.featureTitle}>Workshops & Events</h4>
-            <p style={styles.featureText}>
-              Discover career workshops and programs happening on your campus.
-            </p>
+            <p style={styles.featureText}>Campus career resources.</p>
           </div>
         </div>
       </main>
@@ -169,7 +181,44 @@ function Home() {
   );
 }
 
-/* --- styles object unchanged --- */
+const styles = {
+  page: { minHeight: "100vh", backgroundColor: "#fff" },
+  nav: { display: "flex", justifyContent: "space-between", padding: "1.5rem" },
+  logo: { color: "#16a34a", fontWeight: 700 },
+  navLinks: { display: "flex", gap: "1.5rem" },
+  navButtons: { display: "flex", gap: "0.75rem" },
+  primaryButton: {
+    background: "#f97316",
+    color: "#fff",
+    border: "none",
+    padding: "0.6rem 1.25rem",
+    borderRadius: "999px",
+    cursor: "pointer",
+  },
+  outlineButton: {
+    border: "1px solid #111",
+    background: "transparent",
+    padding: "0.6rem 1.25rem",
+    borderRadius: "999px",
+  },
+  ghostButton: {
+    background: "transparent",
+    border: "none",
+    color: "#111",
+    cursor: "pointer",
+  },
+  hero: { display: "grid", gridTemplateColumns: "2fr 1fr", padding: "6rem 3rem" },
+  heroText: { maxWidth: "650px" },
+  eyebrow: { color: "#16a34a" },
+  title: { fontSize: "2.6rem" },
+  highlight: { color: "#f97316" },
+  subtitle: { color: "#4b5563" },
+  heroButtons: { display: "flex", gap: "1rem" },
+  tagline: { color: "#6b7280" },
+  featureGrid: { display: "grid", gap: "1.25rem" },
+  featureCard: { padding: "1.25rem" },
+  featureTitle: { color: "#16a34a" },
+  featureText: { color: "#4b5563" },
+};
 
 export default Home;
-

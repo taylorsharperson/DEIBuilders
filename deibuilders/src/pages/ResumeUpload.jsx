@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-// DEMO: ResumeUpload component (offline-only). Uses a mocked parse via setTimeout.
+// Read API keys from environment (REACT_APP_ prefix is required for Create React App)
+// Keys must not be hardcoded. These are read from process.env at build/runtime.
+const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+const JOBMATCH_API_KEY = process.env.REACT_APP_JOBMATCH_API_KEY;
+
 export default function ResumeUpload() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -14,126 +18,277 @@ export default function ResumeUpload() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      padding: "3.5rem",
-      background: "linear-gradient(180deg,#f7f8fb 0%, #f1f4f8 100%)",
+      backgroundColor: "#ffffff",
+      fontFamily: "Inter, system-ui, sans-serif",
+      color: "#111111",
+      padding: "2rem",
     },
     card: {
-      width: "min(760px,94vw)",
-      padding: "2rem",
-      borderRadius: 18,
-      boxShadow: "0 12px 40px rgba(12,16,24,0.12)",
-      background: "rgba(255,255,255,0.82)",
-      backdropFilter: "saturate(120%) blur(8px)",
-      WebkitBackdropFilter: "saturate(120%) blur(8px)",
-      border: "1px solid rgba(15,23,42,0.04)",
+      width: "min(560px, 94vw)",
+      backgroundColor: "#ffffff",
+      borderRadius: "16px",
+      boxShadow: "0 10px 30px rgba(15,23,42,0.08)",
+      padding: "2.25rem",
+      border: "1px solid #eef2f6",
     },
-    title: { margin: 0, fontSize: "1.45rem", letterSpacing: "-0.01rem", color: "#0f172a" },
-    subtitle: { marginTop: 8, color: "#475569", fontSize: "0.96rem" },
-    form: { marginTop: 18, display: "flex", flexDirection: "column", gap: 10 },
-    helper: { marginTop: 8, color: "#94a3b8", fontSize: "0.9rem" },
-    resultCard: { marginTop: 16, padding: 14, borderRadius: 12, border: "1px solid rgba(14,20,30,0.04)", background: "#fff" },
-    successBadge: { padding: "0.35rem 0.7rem", background: "#ecfdf5", color: "#059669", borderRadius: 999, fontWeight: 700 },
-    uploadButtonInline: { marginTop: 12, borderRadius: 12, padding: "0.65rem 1rem", fontWeight: 800 },
+    title: {
+      fontSize: "1.4rem",
+      fontWeight: 700,
+      margin: 0,
+      color: "#111111",
+    },
+    subtitle: {
+      marginTop: "0.5rem",
+      fontSize: "0.95rem",
+      color: "#6b7280",
+    },
+    form: {
+      marginTop: "1.5rem",
+      display: "grid",
+      gap: "0.75rem",
+    },
+    helper: {
+      fontSize: "0.85rem",
+      color: "#9ca3af",
+      marginTop: "0.25rem",
+    },
+    input: {
+      display: "block",
+    },
+    button: {
+      marginTop: "0.6rem",
+      width: "100%",
+      padding: "0.85rem 1rem",
+      borderRadius: "12px",
+      border: "none",
+      background: "#f97316",
+      color: "#ffffff",
+      fontWeight: 700,
+      cursor: "pointer",
+      fontSize: "1rem",
+      boxShadow: "0 8px 20px rgba(249,115,22,0.12)",
+      transition: "transform 180ms ease, box-shadow 180ms ease",
+    },
+    muted: {
+      color: "#6b7280",
+      fontSize: "0.9rem",
+    },
+    resultCard: {
+      marginTop: "1rem",
+      padding: "1rem",
+      borderRadius: "12px",
+      border: "1px solid #eef2f6",
+      background: "#fff",
+      boxShadow: "0 8px 24px rgba(15,23,42,0.04)",
+    },
+    sectionTitle: {
+      margin: 0,
+      fontSize: "1rem",
+      fontWeight: 700,
+      color: "#111",
+    },
+    successBadge: {
+      display: "inline-block",
+      padding: "0.25rem 0.5rem",
+      background: "rgba(22,163,74,0.12)",
+      color: "#16a34a",
+      borderRadius: "999px",
+      fontSize: "0.85rem",
+      fontWeight: 700,
+    },
   };
 
-  const generateMatches = (skills) => {
-    const map = { React: "Frontend Developer Intern", JavaScript: "Software Engineer Intern", AI: "Data Science Intern" };
-    const out = [];
-    for (const s of (skills || [])) {
-      out.push({ skill: s, title: map[s] || `${s} Specialist`, company: "Demo Co" });
-      if (out.length >= 3) break;
-    }
-    if (out.length === 0) out.push({ skill: "General", title: "Software Engineer Intern", company: "Demo Co" });
-    return out;
+  const handleFileChange = (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (f) setFile(f);
+    else setFile(null);
+    setResult(null);
+  setMatches(null);
+  setMatchesLoading(false);
   };
 
-  // DEMO simulateParse (no network): setTimeout with fake parsed data
   const simulateParse = () => {
+    // This simulates a backend / Gemini API call. In a real integration
+    // you would send the file to your server or directly to the Gemini API
+    // and receive a parsed JSON object. (No real API call here.)
+
     setLoading(true);
     setResult(null);
-    setMatches(null);
-    setMatchesLoading(true);
 
+    // Fake network/processing time
     setTimeout(() => {
-      const fake = {
-        name: "Alex Doe",
-        email: "alex.doe@example.com",
-        skills: ["React", "JavaScript", "Communication"],
-        education: "B.S. Computer Science, Example University",
-        experience: "Internship at ExampleCorp; built React apps and assisted with backend APIs.",
+      const mock = {
+        name: "Demo Student",
+        email: "demo.student@famu.edu",
+        skills: ["JavaScript", "React", "AI"],
+        education: "B.S. Computer Science — Florida A&M University",
+        experience: "2 Internship Matches Found",
       };
 
-      setResult(fake);
-      const generated = generateMatches(fake.skills);
-      setMatches(generated);
-      setMatchesLoading(false);
-
-      // persist & notify per requirements
-      try { localStorage.setItem("resumeUploaded", "true"); localStorage.setItem("matchesAvailable", "true"); } catch (e) {}
-      try { window.dispatchEvent(new CustomEvent("deib:resumeUploaded", { detail: { matchesAvailable: true } })); } catch (e) {}
-
+      setResult(mock);
       setLoading(false);
-    }, 900);
+
+      // Start generating job matches (demo) based on parsed skills
+      setMatches(null);
+      setMatchesLoading(true);
+
+      setTimeout(() => {
+        const map = {
+          React: "Frontend Developer Intern",
+          JavaScript: "Software Engineer Intern",
+          AI: "Data Science Intern",
+          "Data Structures": "Algorithms Intern",
+          Communication: "Technical Communications Intern",
+        };
+
+        const seen = new Set();
+        const generated = [];
+
+        for (const skill of mock.skills) {
+          const key = skill.replace(/\s/g, "");
+          const title = map[skill] || map[key] || null;
+          if (title && !seen.has(title)) {
+            seen.add(title);
+            generated.push({ title, company: "Acme Labs", skill });
+          }
+          if (generated.length >= 3) break;
+        }
+
+        // Ensure at least 2 matches
+        const fillers = [
+          { title: "Software Engineer Intern", company: "Tech Solutions" },
+          { title: "Frontend Developer Intern", company: "BrightApps" },
+        ];
+        let fi = 0;
+        while (generated.length < 2 && fi < fillers.length) {
+          const f = fillers[fi++];
+          if (!generated.find((g) => g.title === f.title)) generated.push({ ...f, skill: "General" });
+        }
+
+        setMatches(generated);
+        setMatchesLoading(false);
+      }, 900);
+    }, 1600);
   };
 
-  const handleSubmit = (e) => { e.preventDefault(); if (!file) return; simulateParse(); };
-  const handleFileChange = (e) => setFile(e.target.files?.[0] || null);
-
-  useEffect(() => { try { const uploaded = localStorage.getItem("resumeUploaded"); if (uploaded === "true") { /* noop */ } } catch (e) {} }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!file) return;
+    simulateParse();
+  };
 
   return (
-    <div className="resume-page" style={styles.page}>
+    <div style={styles.page}>
       <style>{`
-        .resume-page { display: flex; align-items: center; justify-content: center; }
-        .resume-card { transition: transform 200ms cubic-bezier(.2,.9,.24,1), box-shadow 200ms cubic-bezier(.2,.9,.24,1); will-change: transform; }
-        .resume-card:hover { transform: translateY(-6px); box-shadow: 0 26px 60px rgba(12,16,24,0.16); }
+        div[role="main"] { transition: transform 220ms ease, box-shadow 220ms ease; }
+        div[role="main"]:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(15,23,42,0.12); }
 
-        .upload-button { transition: transform 200ms cubic-bezier(.2,.9,.24,1), box-shadow 200ms cubic-bezier(.2,.9,.24,1); }
-        .upload-button:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(249,115,22,0.20), 0 0 18px rgba(249,115,22,0.08); }
-        .upload-button:active { transform: translateY(-1px); }
+        .upload-button { transition: transform 180ms ease, box-shadow 180ms ease; }
+        .upload-button:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(249,115,22,0.22); }
 
-        .upload-button.primary { background: linear-gradient(180deg,#fb923c,#fb7a22); color: #fff; border: none; }
-        .upload-button.primary:focus { outline: none; box-shadow: 0 6px 24px rgba(251,146,60,0.18); }
-
-        @media (prefers-reduced-motion: reduce) { .resume-card, .upload-button { transition: none !important; transform: none !important; } }
+        @media (prefers-reduced-motion: reduce) { div[role="main"], .upload-button { transition: none !important; transform: none !important; } }
       `}</style>
 
-      <main role="main" className="resume-card" style={styles.card} aria-live="polite">
-        <h1 style={styles.title}>Resume Upload (Demo)</h1>
-        <p style={styles.subtitle}>Upload a resume — demo mode (offline)</p>
+      <main role="main" style={styles.card} aria-live="polite">
+  <h1 style={styles.title}>Resume Upload (AI Powered)</h1>
+  <p style={styles.subtitle}>Upload your resume for Gemini AI analysis (Demo)</p>
 
         <form style={styles.form} onSubmit={handleSubmit}>
-          <label style={{ color: "#6b7280" }} htmlFor="resume-input">Select a resume (PDF, DOC, DOCX)</label>
-          <input id="resume-input" aria-label="Resume file" type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} />
+          <label style={styles.muted} htmlFor="resume-input">
+            Select a resume (PDF, DOC)
+          </label>
+          <input
+            id="resume-input"
+            aria-label="Resume file"
+            style={styles.input}
+            type="file"
+            accept=".pdf,.doc"
+            onChange={handleFileChange}
+          />
+
           <div style={styles.helper}>This demo accepts PDF, DOC, and DOCX files only.</div>
 
           <button
             type="submit"
-            className="upload-button primary"
-            style={{ ...styles.successBadge, ...styles.uploadButtonInline }}
+            className="upload-button"
+            style={{ ...styles.button, opacity: file ? 1 : 0.6, cursor: file ? "pointer" : "not-allowed" }}
             disabled={!file || loading}
           >
             {loading ? "Analyzing…" : "Upload"}
           </button>
         </form>
 
+        <div style={{ marginTop: "0.75rem", color: "#9ca3af", fontSize: "0.875rem" }}>
+          This is a demo. No real resume data is stored.
+        </div>
+
         {result && (
-          <div style={styles.resultCard}>
-            <h3>Parsed</h3>
-            <pre style={{ whiteSpace: "pre-wrap", marginTop: 8 }}>{JSON.stringify(result, null, 2)}</pre>
+          <div style={styles.resultCard} aria-live="polite">
+            <h3 style={styles.sectionTitle}>Gemini Parsed Output</h3>
+            <div style={{ marginTop: "0.6rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div>
+                  <div style={{ fontSize: "0.9rem", color: "#6b7280" }}>Name</div>
+                  <div style={{ fontWeight: 700 }}>{result.name}</div>
+                </div>
+                <div style={styles.successBadge}>Demo</div>
+              </div>
+
+              <div style={{ marginTop: "0.6rem" }}>
+                <div style={{ fontSize: "0.9rem", color: "#6b7280" }}>Email</div>
+                <div>{result.email}</div>
+              </div>
+
+              <div style={{ marginTop: "0.6rem" }}>
+                <div style={{ fontSize: "0.9rem", color: "#6b7280" }}>Key Skills</div>
+                <ul>
+                  {result.skills.map((s, i) => (
+                    <li key={i} style={{ color: "#374151" }}>{s}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div style={{ marginTop: "0.6rem" }}>
+                <div style={{ fontSize: "0.9rem", color: "#6b7280" }}>Education</div>
+                <div>{result.education}</div>
+              </div>
+
+              <div style={{ marginTop: "0.6rem" }}>
+                <div style={{ fontSize: "0.9rem", color: "#6b7280" }}>Experience Summary</div>
+                <div>{result.experience}</div>
+              </div>
+            </div>
           </div>
         )}
+        {/* Generated job matches section (demo) */}
+        {result && (
+          <div style={{ marginTop: "0.85rem" }}>
+            <div style={{ fontSize: "0.85rem", color: "#6b7280", marginBottom: "0.45rem" }}>Generated by Gemini AI (Demo)</div>
 
-        {matchesLoading && <div style={{ marginTop: 12 }}>Analyzing matches…</div>}
-        {matches && (
-          <div style={{ marginTop: 12 }}>
-            <h3>Matches</h3>
-            <ul>
-              {matches.map((m, i) => <li key={i}>{m.title} — {m.company} ({m.skill})</li>)}
-            </ul>
+            {matchesLoading && (
+              <div style={{ ...styles.resultCard, padding: "0.85rem", textAlign: "center" }}>
+                <div style={{ fontWeight: 700, color: "#374151" }}>Gemini AI analyzing resume...</div>
+              </div>
+            )}
+
+            {matches && (
+              <div style={{ display: "grid", gap: "0.6rem", marginTop: "0.4rem" }}>
+                {matches.map((m, idx) => (
+                  <div key={idx} style={styles.resultCard}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <div>
+                        <div style={{ fontSize: "0.9rem", color: "#6b7280" }}>{m.skill || "Skill"}</div>
+                        <div style={{ fontWeight: 700 }}>{m.title}</div>
+                        <div style={{ fontSize: "0.9rem", color: "#6b7280", marginTop: "0.25rem" }}>{m.company}</div>
+                      </div>
+                      <div style={styles.successBadge}>Match</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
-
       </main>
     </div>
   );

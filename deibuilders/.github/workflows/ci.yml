@@ -20,16 +20,13 @@ jobs:
           node-version: '20.16.0'
 
       - name: Install dependencies
-        run: |
-          cd deibuilders
-          npm ci
+        working-directory: deibuilders
+        run: npm ci
 
       - name: Run tests
-        run: |
-          cd deibuilders
-          npm test -- --watchAll=false
+        working-directory: deibuilders
+        run: npm test -- --watchAll=false
 
       - name: Build project
-        run: |
-          cd deibuilders
-          npm run build
+        working-directory: deibuilders
+        run: npm run build

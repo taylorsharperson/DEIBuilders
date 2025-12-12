@@ -10,10 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: deibuilders
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,10 +20,16 @@ jobs:
           node-version: '20.16.0'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          cd deibuilders
+          npm ci
 
       - name: Run tests
-        run: npm test -- --watchAll=false
+        run: |
+          cd deibuilders
+          npm test -- --watchAll=false
 
       - name: Build project
-        run: npm run build
+        run: |
+          cd deibuilders
+          npm run build

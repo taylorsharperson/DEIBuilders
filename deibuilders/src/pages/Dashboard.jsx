@@ -1,6 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import Workshops from "../components/Workshops";
+import Notifications from "../components/Notifications";
+import Preferences from "../components/Preferences";
+// If you later want the full mentor form on the dashboard too:
+// import MentorRequest from "../components/MentorRequest";
+
 export default function Dashboard() {
   const navigate = useNavigate();
   const styles = {
@@ -82,6 +88,7 @@ export default function Dashboard() {
       border: "none",
       alignItems: "center",
       justifyContent: "space-between",
+      flexWrap: "wrap",
     },
     statusItem: {
       display: "flex",
@@ -100,6 +107,18 @@ export default function Dashboard() {
       fontSize: "0.95rem",
       color: "#111111",
       fontWeight: 600,
+    },
+    featureGrid: {
+      marginTop: "2.5rem",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gap: "1.5rem",
+    },
+    featureCard: {
+      padding: "1.5rem",
+      borderRadius: "16px",
+      border: "1px solid #e5e7eb",
+      backgroundColor: "#f9fafb",
     },
     ctaRow: {
       display: "flex",
@@ -139,28 +158,58 @@ export default function Dashboard() {
           <p style={styles.subtitle}>Your career toolkit powered by DEI Builders</p>
         </header>
 
+        {/* Quick action tiles */}
         <section aria-label="Quick actions" style={styles.quickGrid}>
-          <div onClick={() => navigate('/resume-upload')} className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
+          <div
+            onClick={() => navigate("/resume-upload")}
+            className="dash-card"
+            style={styles.card}
+            tabIndex={0}
+            role="button"
+            aria-pressed="false"
+          >
             <h3 style={styles.cardTitle}>Resume Analyzer</h3>
             <p style={styles.cardText}>Upload and analyze your resume using AI.</p>
           </div>
 
-          <div className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
+          <div
+            onClick={() => navigate("/job-matches")}
+            className="dash-card"
+            style={styles.card}
+            tabIndex={0}
+            role="button"
+            aria-pressed="false"
+          >
             <h3 style={styles.cardTitle}>Job Matches</h3>
             <p style={styles.cardText}>View curated job and internship matches.</p>
           </div>
 
-          <div onClick={() => navigate('/mentor-requests')} className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
+          <div
+            onClick={() => navigate("/mentor-requests")}
+            className="dash-card"
+            style={styles.card}
+            tabIndex={0}
+            role="button"
+            aria-pressed="false"
+          >
             <h3 style={styles.cardTitle}>Mentorship</h3>
             <p style={styles.cardText}>Connect with professionals in your field.</p>
           </div>
 
-          <div className="dash-card" style={styles.card} tabIndex={0} role="button" aria-pressed="false">
+          <div
+            onClick={() => navigate("/workshops")}
+            className="dash-card"
+            style={styles.card}
+            tabIndex={0}
+            role="button"
+            aria-pressed="false"
+          >
             <h3 style={styles.cardTitle}>Workshops</h3>
             <p style={styles.cardText}>Explore career events and workshops.</p>
           </div>
         </section>
 
+        {/* Status panel */}
         <section aria-label="Status panel" style={styles.statusPanel}>
           <div style={styles.statusItem}>
             <div style={styles.statusLabel}>Resume Status</div>
@@ -178,8 +227,29 @@ export default function Dashboard() {
           </div>
         </section>
 
+        {/* Your feature components */}
+        <section aria-label="Student tools" style={styles.featureGrid}>
+          <div style={styles.featureCard}>
+            <Workshops />
+          </div>
+          <div style={styles.featureCard}>
+            <Notifications />
+          </div>
+          <div style={styles.featureCard}>
+            <Preferences />
+          </div>
+        </section>
+
+        {/* Call to action */}
         <div style={styles.ctaRow}>
-          <button className="cta-button" style={styles.ctaButton} aria-label="Upload Resume" onClick={() => navigate('/resume-upload')}>Upload Resume</button>
+          <button
+            className="cta-button"
+            style={styles.ctaButton}
+            aria-label="Upload Resume"
+            onClick={() => navigate("/resume-upload")}
+          >
+            Upload Resume
+          </button>
         </div>
       </main>
     </div>

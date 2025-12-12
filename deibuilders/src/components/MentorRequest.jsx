@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function MentorRequest() {
-  const [careerField, setCareerField] = useState('');
-  const [message, setMessage] = useState('');
+  const [careerField, setCareerField] = useState("");
+  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
@@ -12,16 +12,17 @@ export default function MentorRequest() {
   };
 
   return (
-    <div>
-      <h2>Mentor Requests</h2>
+    <div className="mentor-form">
+      <h2>Request a Mentor</h2>
 
       {!submitted ? (
         <form onSubmit={handleSubmit}>
           <label>
-            Career Field:
+            Career Field
             <select
               value={careerField}
               onChange={(e) => setCareerField(e.target.value)}
+              required
             >
               <option value="">Select a field</option>
               <option value="Software Engineering">Software Engineering</option>
@@ -30,23 +31,22 @@ export default function MentorRequest() {
             </select>
           </label>
 
-          <br />
-
           <label>
-            Message:
+            What are you looking for in a mentor?
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Describe the type of mentorship you want..."
+              required
             />
           </label>
-
-          <br />
 
           <button type="submit">Submit Request</button>
         </form>
       ) : (
-        <p>Your mentor request has been submitted!</p>
+        <p className="mentor-success">
+          Your mentor request has been submitted!
+        </p>
       )}
     </div>
   );

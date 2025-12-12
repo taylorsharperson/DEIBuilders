@@ -7,7 +7,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import ResumeUpload from './pages/ResumeUpload';
-import MentorRequest from './pages/MentorRequest';
+import MentorRequests from './pages/MentorRequests';
+import WorkshopsPage from "./pages/WorkshopsPage";
+import JobMatches from "./pages/JobMatches";
+
 
 function App() {
   return (
@@ -19,6 +22,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/resume-upload" element={<ResumeUpload />} />
         <Route path="/mentor-requests" element={<MentorRequests />} />
+        <Route path="/workshops" element={<WorkshopsPage />} />
+        <Route path="/job-matches" element={<JobMatches />} />
       </Routes>
     </Router>
   );

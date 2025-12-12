@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import ResumeUpload from './pages/ResumeUpload';
-import MentorRequests from './pages/MentorRequests';
+import MentorRequest from './pages/MentorRequest';
 
 function App() {
   return (

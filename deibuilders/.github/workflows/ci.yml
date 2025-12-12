@@ -8,25 +8,26 @@ on:
 
 jobs:
   build:
-    name: Build and Test
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: deibuilders
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js (LTS)
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
+          node-version: '20.16.0'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests (CI-safe)
-        # In GitHub Actions CI is true by default; ensure tests don't run in watch mode
+      - name: Run tests
         run: npm test -- --watchAll=false
 
-      - name: Build
-        run: npm run build --silent
+      - name: Build project
+        run: npm run build

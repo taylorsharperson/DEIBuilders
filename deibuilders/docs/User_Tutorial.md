@@ -1,103 +1,105 @@
-User Tutorial
+# User Tutorial
 
-Step-by-step instructions for key system tasks
-Clear, accessible language suitable for non-technical users
+## Overview
+DEI Builders provides a simple, accessible experience that allows students to:
+- Upload resumes
+- Receive skill insights
+- Request mentors
+- Navigate professional growth tools
 
-1. What DEI Builders Does
+This tutorial walks users step-by-step through the system’s core features.
 
-DEI Builders is a career development platform designed to help students upload resumes, analyze their skills, and receive tailored insights for professional growth. The system focuses on accessibility, ease of use, and supporting diverse users as they prepare for internships, jobs, and opportunities.
+---
 
-2. Getting Started
-Open the Platform
+## Getting Started
 
-Visit the DEI Builders website in your browser.
+### What You Can Do
+- Upload your resume  
+- Receive skill and experience analysis  
+- View insights on the dashboard  
+- Request mentorship  
+- Explore workshops  
+- Update personal preferences  
+- Navigate an accessible interface  
 
-You’ll see options such as Dashboard, Resume Upload, Workshops, Mentorship, and Preferences.
+---
 
-Create or Log Into Your Account
+## Resume Upload
 
-New users select Sign Up.
+### How to Upload Your Resume
+1. Go to the **Dashboard** or **Resume Upload** page.  
+2. Click **Upload Resume**.  
+3. Select your PDF or DOCX file.  
+4. Click **Submit**.  
 
-Returning users select Log In.
+**Insights will appear on your dashboard, including:**
+- Extracted skills  
+- Suggested improvements  
+- Recommended opportunities  
 
-3. Uploading Your Resume
+---
 
-Navigate to the Dashboard or Resume Upload page.
+## Dashboard
 
-Select Upload Resume.
+The Dashboard serves as the main hub for your activity.
 
-Choose your PDF or Word resume file.
+### What You’ll See
+- Skill insights  
+- Notifications  
+- Workshop recommendations  
+- Mentorship suggestions  
+- Recent updates  
 
-Click Submit.
+---
 
-Once processed, your skill insights, suggestions, and recommended opportunities will appear on the Dashboard.
+## Mentorship Requests
 
-4. Navigating the Dashboard
+### How to Request a Mentor
+1. Open the **MentorRequest** page.  
+2. Select your interests or fields.  
+3. Choose mentor preferences.  
+4. Submit the request.  
 
-The Dashboard displays:
+You will receive a confirmation message after submitting.
 
-Skill insights
+---
 
-Notifications
+## Notifications
 
-Recommended workshops
+### Types of Notifications
+- Workshop updates  
+- Resume insight changes  
+- Mentor responses  
+- System alerts  
 
-Mentorship suggestions
+View all notifications on the **Notifications** page.
 
-Recent updates
+---
 
-Everything is organized to be simple and easy to understand for new users.
+## Preferences
 
-5. Requesting a Mentor
+### Editable Settings
+- Personal information  
+- Notification settings  
+- Career interest areas  
+- Accessibility options  
 
-Go to the MentorRequest page.
+Settings save automatically or through a **Save** button depending on the field.
 
-Select your interests or fields you want mentorship in.
+---
 
-Choose your mentor preferences.
+## Workshops
 
-Submit the request.
+### Workshop Features
+- Browse available workshops  
+- Read descriptions and dates  
+- Save workshops to your dashboard  
+- Mark them as completed  
 
-A confirmation message will appear once completed.
+---
 
-6. Viewing Notifications
-
-Click Notifications in the navigation menu.
-
-View updates such as workshop alerts, resume analysis updates, and mentor messages.
-
-7. Updating Your Preferences
-
-In the Preferences page, you can update:
-
-Personal info
-
-Notification settings
-
-Career interests
-
-Accessibility options
-
-Updates will save automatically or after clicking Save, depending on the section.
-
-8. Exploring Workshops
-
-In the Workshops section, you can:
-
-View current workshops
-
-Read descriptions and dates
-
-Save workshops to your dashboard
-
-Mark them as completed
-
-9. Tips for Non-Technical Users
-
-Buttons and menus are clearly labeled.
-
-No technical or coding knowledge is needed.
-
-The Dashboard is the best place to return to if you feel lost.
-
-The platform works on desktop and mobile browsers.
+## Tips for Non-Technical Users
+- No technical knowledge is required  
+- All buttons and menus are clearly labeled  
+- Return to the Dashboard anytime you feel lost  
+- Works on desktop and mobile devices  

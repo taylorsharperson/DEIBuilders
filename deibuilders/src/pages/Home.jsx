@@ -5,7 +5,8 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div style={styles.page}>
+    <div style={{ minHeight: '100vh', padding: '4.5rem 2rem', background: 'linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%)' }}>
+      <div style={{ width: 'min(1100px, 98vw)', margin: '0 auto', background: '#fff', border: '1px solid #eef2f6', borderRadius: 26, padding: '3rem', boxShadow: '0 30px 80px rgba(15,23,42,0.12)' }}>
       <style>{`
         .feature-card {
           background-color: #ffffff;
@@ -177,6 +178,7 @@ function Home() {
           </div>
         </div>
       </main>
+      </div>
     </div>
   );
 }
@@ -207,10 +209,10 @@ const styles = {
     color: "#111",
     cursor: "pointer",
   },
-  hero: { display: "grid", gridTemplateColumns: "2fr 1fr", padding: "6rem 3rem" },
+  hero: { display: "grid", gridTemplateColumns: "2fr 1fr", padding: "3rem 3rem" },
   heroText: { maxWidth: "650px" },
   eyebrow: { color: "#16a34a" },
-  title: { fontSize: "2.6rem" },
+  title: { fontSize: "2rem" },
   highlight: { color: "#f97316" },
   subtitle: { color: "#4b5563" },
   heroButtons: { display: "flex", gap: "1rem" },
